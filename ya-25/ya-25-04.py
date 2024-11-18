@@ -1,10 +1,9 @@
 from itertools import permutations
 from math import sqrt
-from functools import lru_cache, reduce
+from functools import reduce
 
 import operator
 
-@lru_cache
 def prosto(x):
   is_prime:bool = True
   for i in range(2, int(sqrt(x))+1):
@@ -12,7 +11,6 @@ def prosto(x):
       is_prime = False
   return is_prime
 
-@lru_cache
 def f(x:int):
   st:set[int] = set()
   for i in range(2, int(sqrt(x)) + 1):
