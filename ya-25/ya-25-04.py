@@ -4,19 +4,19 @@ from functools import reduce
 
 import operator
 
-def prosto(x):
+def prosto(_x:int):
   is_prime:bool = True
-  for i in range(2, int(sqrt(x))+1):
-    if x % i == 0:
+  for i in range(2, int(sqrt(_x)) + 1):
+    if _x % i == 0:
       is_prime = False
   return is_prime
 
-def f(x:int):
+def f(_x:int):
   st:set[int] = set()
-  for i in range(2, int(sqrt(x)) + 1):
-    if x % i == 0:
+  for i in range(2, int(sqrt(_x)) + 1):
+    if _x % i == 0:
       st.add(i)
-      st.add(x // i)
+      st.add(_x // i)
   return list(filter(prosto, st))
 
 for x in range(326782, 965325):
