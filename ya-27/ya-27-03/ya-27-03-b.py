@@ -20,7 +20,6 @@ with open(os.path.abspath('.') + '/ya-27-03-b.csv', 'r') as f:
   clusters = [[] for _ in range(5)]
   for p in points:
     x, y = map(float, p.replace(',', '.').split())
-
     if 1 > x > -3 and 2 > y > -3:
       clusters[0].append((x,y))
     if 7 > x > 3 and 1 > y > -3:
